@@ -1,17 +1,18 @@
-import React from 'react';
-import itemsData from './items.json';
+import React from "react";
+import itemsData from "./items.json";
 
 class BrowseView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       items: itemsData,
-      searchText: '',
-      cartQuantities: {}, 
+      searchText: "",
+      cartQuantities: {},
     };
   }
 
-  handleSearchChange = (event) => { // Placeholder
+  handleSearchChange = (event) => {
+    // Placeholder
     this.setState({ searchText: event.target.value });
   };
 
@@ -46,34 +47,35 @@ class BrowseView extends React.Component {
 
   render() {
     const { items, searchText, cartQuantities } = this.state;
-
-    const filteredItems = items.filter( // throws some error, Needs fixed
-      (item) =>
-        item.name.toLowerCase().includes(searchText.toLowerCase()) ||
-        item.description.toLowerCase().includes(searchText.toLowerCase())
+    console.log(items);
+    const filteredItems = items.filter(
+      (item) => item.name.toLowerCase().includes(searchText.toLowerCase())
     );
 
     return (
-      <div>
-        <h2>Browse Items</h2>
-        <input
-          type="text"
-          placeholder="Search items..."
-          value={searchText}
-          onChange={this.handleSearchChange}
-        />
+      <div className="browse-view">
+        <div className="header">
+        <h1>Cowboy Hats Emporium</h1>
+          <h2>Browse Items</h2>
+          <input
+            type="search"
+            placeholder="Search items..."
+            value={searchText}
+            onChange={this.handleSearchChange}
+          />
+        </div>
         <div className="item-list">
           {filteredItems.map((item) => (
             <div key={item.id} className="item-card">
-            <img
-              src={item.image}
-              alt={item.name}
-              style={{ width: '200px', height: '200px' }} 
-            />
-            <h3>{item.name}</h3>
-            <p>{item.description}</p>
-            <p>Price: ${item.price.toFixed(2)}</p>
-              <div>
+              <img
+                src={item.image}
+                alt={item.name}
+                className="item-image"
+              />
+              <h3>{item.name}</h3>
+              <p>{item.description}</p>
+              <p>Price: ${item.price.toFixed(2)}</p>
+              <div className="quantity-controls">
                 <button onClick={() => this.handleAddToCart(item)}>+</button>
                 <span>{cartQuantities[item.id] || 0}</span>
                 <button onClick={() => this.handleRemoveFromCart(item)}>-</button>
@@ -81,7 +83,7 @@ class BrowseView extends React.Component {
             </div>
           ))}
         </div>
-        <button onClick={this.handleCheckout}>Checkout</button>
+        <button className="checkout-button" onClick={this.handleCheckout}>Checkout</button>
       </div>
     );
   }
