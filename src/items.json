@@ -1,0 +1,44 @@
+[
+    {
+      "id": 1,
+      "name": "Men's Classic Cattleman Western Cowboy Hat",
+      "price": 5.99,
+      "image": "images/hat_id1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Stetson Open Road 6X Fur Felt Hat",
+      "price": 279.99,
+      "image": "images/hat_id2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Stetson Santa Fe Crushable Wool Hat",
+      "price": 124.99,
+      "image": "images/hat_id3.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Diego Mens Straw Cowboy Hat",
+      "price": 87.00,
+      "image": "images/hat_id4.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Liberty Mens Straw Cowboy Hat",
+      "price": 99.00,
+      "image": "images/hat_id5.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Harley Mens Leather Cowboy Hat",
+      "price": 177.00,
+      "image": "images/hat_id6.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Pinto Mens Leather Cowboy Hat",
+        "price": 297.00,
+        "image": "images/hat_id7.jpg"
+    }
+  ]
